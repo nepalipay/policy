@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nepalipay Policies</title>
+    <meta
+      name="description"
+      content="Browse Nepalipay policies and security documentation."
+    />
+    <style>
+      :root {
+        --bg: #f6f2ed;
+        --ink: #1e1b18;
+        --muted: #6b5f56;
+        --card: #fffaf4;
+        --accent: #2f5d62;
+        --accent-2: #b47b45;
+        --shadow: 0 10px 30px rgba(30, 27, 24, 0.12);
+        --radius: 16px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Source Serif 4", "Spectral", "Georgia", serif;
+        color: var(--ink);
+        background: radial-gradient(
+            circle at 10% 10%,
+            rgba(180, 123, 69, 0.12),
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 90% 20%,
+            rgba(47, 93, 98, 0.18),
+            transparent 45%
+          ),
+          var(--bg);
+        min-height: 100vh;
+      }
+
+      header {
+        padding: 56px 20px 32px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 12px;
+        color: var(--accent-2);
+      }
+
+      h1 {
+        margin: 16px auto 12px;
+        font-size: clamp(32px, 4vw, 52px);
+        line-height: 1.05;
+      }
+
+      .subtitle {
+        margin: 0 auto;
+        max-width: 680px;
+        color: var(--muted);
+        font-size: 18px;
+      }
+
+      main {
+        padding: 0 20px 64px;
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
+      .grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 18px 18px 20px;
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        transition: transform 220ms ease, box-shadow 220ms ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 38px rgba(30, 27, 24, 0.16);
+      }
+
+      .card h3 {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .card a {
+        margin-top: auto;
+        align-self: flex-start;
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .card a:focus,
+      .card a:hover {
+        text-decoration: underline;
+      }
+
+      .section-title {
+        font-size: 22px;
+        margin: 32px 0 18px;
+      }
+
+      footer {
+        padding: 24px 20px 40px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="eyebrow">Nepalipay</div>
+      <h1>Policies & Security Documentation</h1>
+      <p class="subtitle">
+        Browse, open, or download the official Nepalipay policies. Each item
+        opens a PDF in a new tab for easy reading.
+      </p>
+    </header>
+
+    <main>
+      <h2 class="section-title">Core Policies</h2>
+      <section class="grid" aria-label="Core policies">
+        <article class="card">
+          <h3>Terms of Service</h3>
+          <p>Customer terms and service conditions.</p>
+          <a href="TERMS_OF_SERVICE.pdf" target="_blank" rel="noopener">Open PDF</a>
+        </article>
+        <article class="card">
+          <h3>Privacy Policy</h3>
+          <p>How Nepalipay collects, uses, and protects data.</p>
+          <a href="PRIVACY_POLICY.pdf" target="_blank" rel="noopener">Open PDF</a>
+        </article>
+        <article class="card">
+          <h3>Support Policy</h3>
+          <p>Support scope, SLAs, and escalation paths.</p>
+          <a href="SUPPORT.pdf" target="_blank" rel="noopener">Open PDF</a>
+        </article>
+        <article class="card">
+          <h3>Support & Dispute Policy</h3>
+          <p>Dispute handling and resolution procedures.</p>
+          <a
+            href="Support_and_Dispute_Policy.pdf"
+            target="_blank"
+            rel="noopener"
+            >Open PDF</a
+          >
+        </article>
+      </section>
+
+      <h2 class="section-title">Security & Governance</h2>
+      <section class="grid" aria-label="Security and governance">
+        <article class="card">
+          <h3>Information Security Policy</h3>
+          <p>Baseline security controls and responsibilities.</p>
+          <a
+            href="information-security-policy.pdf"
+            target="_blank"
+            rel="noopener"
+            >Open PDF</a
+          >
+        </article>
+        <article class="card">
+          <h3>Security Overview</h3>
+          <p>Program overview and commitments.</p>
+          <a href="security-overview.pdf" target="_blank" rel="noopener"
+            >Open PDF</a
+          >
+        </article>
+        <article class="card">
+          <h3>Access Control Policy</h3>
+          <p>Access provisioning, review, and authentication rules.</p>
+          <a href="access-control-policy.pdf" target="_blank" rel="noopener"
+            >Open PDF</a
+          >
+        </article>
+        <article class="card">
+          <h3>Risk Management Policy</h3>
+          <p>Risk identification, assessment, and mitigation.</p>
+          <a href="risk-management-policy.pdf" target="_blank" rel="noopener"
+            >Open PDF</a
+          >
+        </article>
+        <article class="card">
+          <h3>Vendor Management Policy</h3>
+          <p>Third-party selection and monitoring process.</p>
+          <a href="vendor-management-policy.pdf" target="_blank" rel="noopener"
+            >Open PDF</a
+          >
+        </article>
+        <article class="card">
+          <h3>Vulnerability Management Policy</h3>
+          <p>Discovery, remediation, and tracking.</p>
+          <a
+            href="vulnerability-management-policy.pdf"
+            target="_blank"
+            rel="noopener"
+            >Open PDF</a
+          >
+        </article>
+      </section>
+
+      <h2 class="section-title">Operational Plans</h2>
+      <section class="grid" aria-label="Operational plans">
+        <article class="card">
+          <h3>Incident Response Plan</h3>
+          <p>Detection, containment, and recovery procedures.</p>
+          <a href="incident-response-plan.pdf" target="_blank" rel="noopener"
+            >Open PDF</a
+          >
+        </article>
+        <article class="card">
+          <h3>Business Continuity & Disaster Recovery</h3>
+          <p>Continuity planning and resilience measures.</p>
+          <a
+            href="business-continuity-and-disaster-recovery-plan.pdf"
+            target="_blank"
+            rel="noopener"
+            >Open PDF</a
+          >
+        </article>
+        <article class="card">
+          <h3>Data Retention & Disposal</h3>
+          <p>Retention schedules and secure disposal.</p>
+          <a href="data-retention-and-disposal-policy.pdf" target="_blank" rel="noopener"
+            >Open PDF</a
+          >
+        </article>
+        <article class="card">
+          <h3>Secure SDLC Policy</h3>
+          <p>Secure development lifecycle practices.</p>
+          <a href="secure-sdlc-policy.pdf" target="_blank" rel="noopener"
+            >Open PDF</a
+          >
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      Nepalipay policies hosted via GitHub Pages.
+    </footer>
+  </body>
+</html>
