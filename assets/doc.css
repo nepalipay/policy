@@ -115,6 +115,43 @@ a:focus {
   color: var(--ink);
 }
 
+.doc blockquote {
+  background: var(--card);
+  border-left: 3px solid var(--accent-2);
+  margin: 24px 0;
+  padding: 12px 18px;
+}
+
+.doc blockquote p {
+  margin: 0;
+}
+
+.doc table {
+  border-collapse: collapse;
+  display: block;
+  margin: 14px 0 24px;
+  max-width: 100%;
+  overflow-x: auto;
+  width: max-content;
+}
+
+.doc th,
+.doc td {
+  border: 1px solid var(--rule);
+  min-width: 110px;
+  padding: 9px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.doc th {
+  background: var(--card);
+}
+
+.doc td:first-child {
+  min-width: 180px;
+}
+
 .doc-callout {
   background: var(--card);
   border-radius: var(--radius);
@@ -153,5 +190,9 @@ a:focus {
   }
   .doc {
     padding: 0;
+  }
+  .doc table {
+    display: table;
+    width: 100%;
   }
 }

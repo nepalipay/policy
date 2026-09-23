@@ -4,179 +4,415 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Privacy Policy — NepaliPay</title>
-    <meta
-      name="description"
-      content="How NepaliPay collects, uses, discloses, and safeguards your personal information."
-    />
+    <meta name="description" content="How NepaliPay collects, uses, and protects your personal information." />
     <link rel="stylesheet" href="assets/doc.css" />
   </head>
   <body>
     <article class="doc">
       <a href="index.html" class="doc-back">All policies</a>
-
       <p class="doc-eyebrow">Legal</p>
-      <h1>Privacy Policy</h1>
-      <p class="doc-meta">Effective Date: April 25, 2026</p>
-
-      <p>
-        NepaliPay (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) operates the NepaliPay
-        mobile application and the marketing website at nepalipay.com. This Privacy Policy
-        explains how we collect, use, disclose, and safeguard your information.
-      </p>
-
-      <h2>1. Information we collect</h2>
-
-      <h3>1.1 Personal information</h3>
+      <h1>NepaliPay Privacy Policy</h1>
+      <p class="doc-meta"><strong>Effective Date:</strong> 12 May 2026<br />
+      <strong>Last Updated:</strong> May 2026<br />
+      <strong>Version:</strong> 2.1<br />
+      <strong>Jurisdiction:</strong> Australia (parent), with provisions for end users in the European Union, United Kingdom, United States (California), and Nepal<br />
+      <strong>Controller:</strong> Fintex Australia Pty Ltd (trading as NepaliPay)</p>
+      <blockquote>
+      <p>Material changes from version 1.0 are summarised at the end of this document under §16.</p>
+      </blockquote>
+      <h2>1. Introduction</h2>
+      <p>NepaliPay (&quot;NepaliPay&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is operated by <strong>Fintex Australia Pty Ltd</strong> and provides a financial-and-social platform via mobile application (the &quot;App&quot;), customer support touchpoints, and a marketing website (collectively, the &quot;Services&quot;).</p>
+      <p>This Privacy Policy describes the personal information we collect, how we use and share it, and your rights. We comply with:</p>
       <ul>
-        <li>Full name and chosen username</li>
-        <li>Email address (signup)</li>
-        <li>Phone number (SMS one-time-code verification)</li>
-        <li>Date of birth (age-gate for cash games — must be 18 or older)</li>
-        <li>Profile photo and banner (optional)</li>
-        <li>OAuth provider identifier when you sign in with Google or Apple</li>
+      <li>the Privacy Act 1988 (Cth) and the Australian Privacy Principles (APPs);</li>
+      <li>where you reside in the European Union or United Kingdom, the General Data Protection Regulation (GDPR / UK-GDPR);</li>
+      <li>where you reside in California, the California Consumer Privacy Act (CCPA) as amended by the CPRA;</li>
+      <li>other applicable data protection laws in jurisdictions where we knowingly operate.</li>
       </ul>
-
-      <h3>1.2 Authentication &amp; security</h3>
+      <p>By using the Services, you agree to this Privacy Policy. If you do not agree, do not use the Services.</p>
+      <h2>2. Important Clarifications</h2>
       <ul>
-        <li>Hashed account password (bcrypt; we never see your plaintext)</li>
-        <li>Hashed 4-digit transaction PIN (bcrypt) used to authorise withdrawals</li>
-        <li>
-          Device biometric capability flag (Face ID / Touch ID / fingerprint) — biometric data
-          itself stays on your device and is never transmitted
-        </li>
-        <li>TOTP shared secret if you enable two-factor authentication</li>
+      <li>NepaliPay is a technology platform and is not a bank or licensed money transmitter. Certain regulated financial functions (card processing, stablecoin custody, payouts) are performed by third-party regulated providers identified in §6.</li>
+      <li>Public blockchains, where used for stablecoin transfers, are outside our control. Once a transfer settles on chain, it is generally irreversible.</li>
+      <li>This Policy describes our practices. Third-party providers maintain their own privacy notices that govern how they handle data they receive directly from you (for example, Stripe's card-data handling).</li>
       </ul>
-
-      <h3>1.3 Financial information</h3>
+      <h2>3. Information We Collect</h2>
+      <p>We collect information in the categories below. Where a field is optional, we say so.</p>
+      <h3>3.1 Account Information</h3>
       <ul>
-        <li>
-          Payment card details (collected and tokenised by Stripe; we never see or store the full
-          card number)
-        </li>
-        <li>Transaction history and wallet balances (USD, USDC, USDT)</li>
-        <li>
-          Stablecoin wallet addresses (via Circle); on-chain transfers are public on the Polygon
-          blockchain by design
-        </li>
-        <li>Gift purchases, game stakes and payouts</li>
+      <li>Email address (required for email signup)</li>
+      <li>Phone number (required only if you sign up via mobile number; optional otherwise)</li>
+      <li>Username, display name, avatar, bio, country, gender (you provide these in profile setup; you control what is visible)</li>
+      <li>Date of birth (required at signup, used solely to enforce the 18+ age gate and applicable cash-game restrictions; we store only the date, not surrounding metadata)</li>
+      <li>Authentication identifiers from your chosen sign-in method (Supabase Auth, Sign in with Apple, or Sign in with Google)</li>
+      <li>Push notification tokens (Apple APNs / Google FCM) when you grant push permission</li>
       </ul>
-
-      <h3>1.4 Communications &amp; content</h3>
+      <h3>3.2 Identity Verification (KYC) Data</h3>
+      <p>NepaliPay does not currently operate its own KYC programme. Where regulated providers (Stripe, Circle) require identity verification to process payments or stablecoin transfers, you provide that information directly to those providers; their privacy notices govern its handling. We may receive limited verification status references (pass / fail / pending) from those providers in order to enable or restrict features.</p>
+      <h3>3.3 Financial &amp; Transaction Data</h3>
+      <p>When you transact through the Services we record:</p>
       <ul>
-        <li>
-          Direct messages and group chat messages — end-to-end encrypted with libsodium
-          <code>nacl.box</code>; we cannot read the plaintext
-        </li>
-        <li>Public room messages, posts, comments, reactions, and stories you publish</li>
-        <li>Photos, videos, voice recordings, and stickers you upload</li>
-        <li>
-          Voice and video calls — peer-to-peer WebRTC with DTLS-SRTP encryption; not recorded or
-          stored on our servers
-        </li>
+      <li>Deposit, transfer, gift, game, and refund amounts and timestamps</li>
+      <li>Transaction status, internal references, and counterparty user IDs (where applicable)</li>
+      <li>Card metadata limited to brand, last 4 digits, and expiry month/year (we do not see or store full card numbers — Stripe does)</li>
+      <li>Stablecoin (USDC) wallet addresses and transaction hashes for transfers initiated through Circle</li>
       </ul>
-
-      <h3>1.5 Device &amp; usage data</h3>
+      <p>We never store full card numbers, CVC, or unmasked card PANs. Those are processed by Stripe.</p>
+      <h3>3.4 Stablecoin &amp; Blockchain Data</h3>
+      <p>If you hold or transfer USDC through the Services:</p>
       <ul>
-        <li>Device model, OS version, app version and build number</li>
-        <li>Push-notification token (Apple APNs / Google FCM via Expo Push)</li>
-        <li>Device fingerprint (used for rate-limiting and abuse prevention)</li>
-        <li>
-          IP address and approximate (city-level) location for fraud screening, sanctions
-          compliance, and the geo-gate on cash games
-        </li>
-        <li>Online / away / busy / offline presence state</li>
-        <li>
-          App usage patterns, in-app search queries, screen interactions, and crash reports
-          (via Sentry)
-        </li>
+      <li>Your developer-controlled Circle wallet address (a public blockchain identifier)</li>
+      <li>Outbound and inbound on-chain transaction hashes</li>
+      <li>Sanctioned-address screening results (we screen destination addresses against OFAC SDN and other sanctions lists before allowing a transfer)</li>
       </ul>
-
-      <h2>2. How we use your information</h2>
+      <p>Public blockchains are pseudonymous but persistent. Transactions you make on chain may be observable by anyone.</p>
+      <h3>3.5 Messaging &amp; Social Data</h3>
+      <p>The Services include end-to-end encrypted direct messages and group chats, public community rooms, a social feed, calls, and gifts. We collect:</p>
       <ul>
-        <li>Provide and maintain our services</li>
-        <li>Process financial transactions, refunds, and chargebacks</li>
-        <li>Verify your identity and prevent fraud and unauthorised access</li>
-        <li>Comply with applicable financial-services and AML regulations</li>
-        <li>Send transaction notifications, security alerts, and product updates</li>
-        <li>Improve product reliability via aggregated, anonymised analytics</li>
-        <li>Comply with valid legal and regulatory obligations</li>
+      <li>Direct-message ciphertext (we cannot read the content; encryption uses keys held only on your devices). Sender, recipient, timestamp, and message-status metadata are visible to us so we can deliver messages and compute unread counts.</li>
+      <li>Public community-room messages (these are not encrypted because the room is public; anyone in the room can read them)</li>
+      <li>Posts, comments, reactions, stories, and bookmarks you create on the social feed</li>
+      <li>Voice and video call records: caller, callee (or group conversation), timestamps, duration, and connection-quality telemetry. Call audio is encrypted end-to-end (DTLS-SRTP) and is not retained.</li>
+      <li>Gift events and balance toasts</li>
+      <li>Reports you file or that are filed against you</li>
       </ul>
-
-      <h2>3. Data sharing</h2>
-      <p>
-        We share specific data with the following processors and only to the extent each one
-        needs to do its job:
-      </p>
+      <h3>3.6 Device &amp; Technical Data</h3>
+      <p>Collected automatically when you use the App or website:</p>
       <ul>
-        <li>
-          <strong>Stripe</strong> — card payments. Receives your card details, email, name, and
-          the deposit amount.
-        </li>
-        <li>
-          <strong>Circle</strong> — USDC custody and on-chain transfers. Receives your wallet
-          address, transfer amounts, and (for higher-value withdrawals) KYC information you
-          submit directly to them.
-        </li>
-        <li>
-          <strong>SMS provider</strong> — receives your phone number to deliver the one-time-code
-          SMS during verification.
-        </li>
-        <li>
-          <strong>Apple Push Notification service / Google Firebase Cloud Messaging
-          (via Expo Push)</strong> — receives your device push token and the notification
-          payload.
-        </li>
-        <li>
-          <strong>Public blockchain (Polygon)</strong> — every USDC transfer to or from an
-          external wallet is permanently recorded on a public ledger by design.
-        </li>
-        <li>
-          <strong>Sentry</strong> — receives anonymised crash logs, performance metrics, and
-          breadcrumbs. PII is scrubbed before transmission.
-        </li>
-        <li>
-          <strong>OFAC / Chainalysis sanctions lists</strong> — destination addresses are
-          screened on every withdrawal; no personal data is sent.
-        </li>
-        <li><strong>Law enforcement</strong> — only when required by valid legal process.</li>
+      <li>IP address and approximate country (derived from Cloudflare request headers)</li>
+      <li>Device model, operating system, app build version</li>
+      <li>A persistent device identifier (used solely as a rate-limit dimension and abuse signal)</li>
+      <li>Crash reports and error stack traces (forwarded to Sentry)</li>
+      <li>Anonymised product analytics events (forwarded to PostHog) — for example &quot;deposit_started&quot;, &quot;first_message_sent&quot;</li>
+      <li>Authentication and security event logs (sign-in, MFA challenge, PIN change, session revocation)</li>
       </ul>
-      <p>We never sell your personal data to third parties.</p>
-
-      <h2>4. Data security</h2>
+      <h3>3.7 Location Data</h3>
+      <p>We do not continuously track your location. We collect:</p>
       <ul>
-        <li>All data transmitted via TLS 1.2 or higher</li>
-        <li>Authentication tokens stored in device secure storage (Keychain / Keystore)</li>
-        <li>Row-level security on every database table</li>
-        <li>PII scrubbed from error reports and analytics events</li>
-        <li>Biometric and two-factor authentication available for account login</li>
-        <li>4-digit transaction PIN required for every external USDC withdrawal</li>
-        <li>Sanctions screening on every withdrawal destination address</li>
+      <li>Approximate IP-derived country (always — used to determine which regional features apply, e.g. NPR onramp restrictions for users in Nepal)</li>
+      <li>Precise GPS coordinates only if you (a) explicitly choose to share a location pin in a chat, or (b) are using a feature that explicitly asks for location at the moment of use</li>
       </ul>
-
-      <h2>5. Your rights</h2>
-      <p>Depending on your jurisdiction, you may:</p>
+      <p>If you share a location pin in a chat, the coordinates are stored in the message metadata and persist for the same retention window as the message.</p>
+      <h3>3.8 Customer Support Data</h3>
+      <p>When you contact customer support (via the in-app help, email, or our website chat surface), we collect the contents of your message, any attachments you share, and metadata (timestamp, your account, the support agent assigned). Support tickets are retained per §8.</p>
+      <h2>4. How We Use Your Information</h2>
+      <p>We use your information to:</p>
       <ul>
-        <li>Access, correct, or delete your personal data</li>
-        <li>Export your data in a portable format (in-app: Settings → Privacy → Export my data)</li>
-        <li>Withdraw consent for non-essential data processing</li>
-        <li>Lodge a complaint with a supervisory authority</li>
+      <li>Provide, maintain, and improve the Services</li>
+      <li>Authenticate you and verify session continuity</li>
+      <li>Process card deposits, internal transfers, and stablecoin operations</li>
+      <li>Detect, investigate, and prevent fraud, abuse, and policy violations</li>
+      <li>Comply with legal obligations including AML / CTF, sanctions screening, and lawful information requests</li>
+      <li>Provide customer support and resolve disputes</li>
+      <li>Communicate service updates, transactional notifications, and (where you opt in) push previews</li>
+      <li>Conduct anonymised product analytics to understand which features are useful</li>
       </ul>
-      <p>
-        Account-level deletion is available in-app: <strong>Me → Delete Account</strong>. See
-        <a href="https://nepalipay.com/deleteaccount">nepalipay.com/deleteaccount</a> for the
-        full deletion path, retained data, and timelines.
-      </p>
-
-      <h2>6. Contact</h2>
-      <p>
-        For privacy inquiries, data-subject requests, or to exercise your rights:
-        <a href="mailto:privacy@nepalipay.com">privacy@nepalipay.com</a>.
-      </p>
+      <p>We do not sell your personal information. We do not share your personal information with third parties for their own marketing purposes.</p>
+      <h2>5. Legal Bases for Processing (EU / UK Users)</h2>
+      <p>Where GDPR / UK-GDPR applies, we rely on the following legal bases:</p>
+      <table>
+      <thead>
+      <tr>
+      <th>Processing</th>
+      <th>Legal basis</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>Provide the core Services (account, transactions, messaging)</td>
+      <td>Performance of a contract — Art. 6(1)(b)</td>
+      </tr>
+      <tr>
+      <td>Fraud prevention, sanctions screening, security event logging</td>
+      <td>Legitimate interests — Art. 6(1)(f)</td>
+      </tr>
+      <tr>
+      <td>AML / CTF retention, regulator response</td>
+      <td>Compliance with legal obligations — Art. 6(1)(c)</td>
+      </tr>
+      <tr>
+      <td>Push notifications, push-preview content forwarded to APNs / FCM</td>
+      <td>Your consent — Art. 6(1)(a) (toggleable in Settings)</td>
+      </tr>
+      <tr>
+      <td>Optional precise location sharing</td>
+      <td>Your consent — Art. 6(1)(a)</td>
+      </tr>
+      </tbody>
+      </table>
+      <p>You may withdraw consent at any time without affecting the lawfulness of processing performed before withdrawal.</p>
+      <h2>6. Sharing of Information (Sub-processors)</h2>
+      <p>We share personal information only with the providers necessary to operate the Services, and only to the extent each provider needs to perform its function. Each provider is bound by a data-processing agreement (DPA) or equivalent contractual safeguards.</p>
+      <table>
+      <thead>
+      <tr>
+      <th>Provider</th>
+      <th>Region</th>
+      <th>Purpose</th>
+      <th>Data shared</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td><strong>Supabase</strong> (Supabase, Inc.)</td>
+      <td>United States</td>
+      <td>Primary backend: database, authentication, storage, realtime, edge functions, vault</td>
+      <td>All user data persisted in our system</td>
+      </tr>
+      <tr>
+      <td><strong>Stripe</strong> (Stripe, Inc.)</td>
+      <td>United States</td>
+      <td>Card payment processing</td>
+      <td>Card data (you enter directly into Stripe), card metadata (last 4, brand, expiry), payment intents</td>
+      </tr>
+      <tr>
+      <td><strong>Circle</strong> (Circle Internet Financial, LLC)</td>
+      <td>United States</td>
+      <td>Developer-controlled USDC wallets, on-chain transfers</td>
+      <td>Wallet addresses, transfer instructions, on-chain hashes</td>
+      </tr>
+      <tr>
+      <td><strong>Apple Push Notification Service (APNs)</strong></td>
+      <td>United States (global edge)</td>
+      <td>Push notification delivery (iOS)</td>
+      <td>Device push token; notification title/body (which is &quot;New message&quot; by default and a redacted preview only if you opted into push previews)</td>
+      </tr>
+      <tr>
+      <td><strong>Google Firebase Cloud Messaging (FCM)</strong></td>
+      <td>United States (global edge)</td>
+      <td>Push notification delivery (Android)</td>
+      <td>Same as APNs above</td>
+      </tr>
+      <tr>
+      <td><strong>Expo Push Service</strong> (Expo, Inc.)</td>
+      <td>United States</td>
+      <td>Routing layer between our backend and APNs / FCM</td>
+      <td>Same payload as APNs / FCM</td>
+      </tr>
+      <tr>
+      <td><strong>Sentry</strong> (Functional Software, Inc.)</td>
+      <td>United States</td>
+      <td>Error monitoring and crash reports</td>
+      <td>Crash stack traces, device metadata; we strip personal identifiers before forwarding where feasible</td>
+      </tr>
+      <tr>
+      <td><strong>PostHog</strong> (PostHog, Inc.)</td>
+      <td>United States (<code>us.i.posthog.com</code>)</td>
+      <td>Anonymised product analytics</td>
+      <td>Pseudonymous user ID and event names (e.g. &quot;deposit_started&quot;); we do not forward message content, balances, or KYC data</td>
+      </tr>
+      <tr>
+      <td><strong>Tawk.to</strong> (tawk.to inc.)</td>
+      <td>United States</td>
+      <td>Customer support chat surface</td>
+      <td>Your support conversations only</td>
+      </tr>
+      <tr>
+      <td><strong>Retool</strong> (Retool, Inc.)</td>
+      <td>United States</td>
+      <td>Internal admin / customer-support dashboard used by our support team</td>
+      <td>Read-only views of profile, balances, transactions, and support tickets — see §6.1</td>
+      </tr>
+      <tr>
+      <td><strong>Twilio</strong> (Twilio Inc.)</td>
+      <td>United States</td>
+      <td>SMS and WhatsApp one-time passcode (OTP) delivery for phone-based sign-in and verification</td>
+      <td>Your phone number, the OTP code we asked them to send</td>
+      </tr>
+      <tr>
+      <td><strong>Vercel</strong> (Vercel Inc.)</td>
+      <td>United States / global edge</td>
+      <td>Hosting of our marketing website at nepalipay.com (NOT the mobile application)</td>
+      <td>Visitor request metadata for marketing pages only</td>
+      </tr>
+      <tr>
+      <td><strong>Cloudflare</strong> (Cloudflare, Inc.)</td>
+      <td>Global edge</td>
+      <td>Network protection, DDoS mitigation, geo-IP headers — provided as a <strong>sub-processor of Supabase</strong> (our backend platform) and Vercel (our marketing host). NepaliPay does not maintain a direct contractual relationship with Cloudflare.</td>
+      <td>Request metadata, IP address (passed through from upstream providers)</td>
+      </tr>
+      <tr>
+      <td><strong>Google</strong> (OAuth)</td>
+      <td>United States</td>
+      <td>&quot;Sign in with Google&quot; identity</td>
+      <td>Email and verified-account claims, when you choose Google sign-in</td>
+      </tr>
+      <tr>
+      <td><strong>Apple</strong> (OAuth)</td>
+      <td>United States</td>
+      <td>&quot;Sign in with Apple&quot; identity</td>
+      <td>Email or relay-email and verified-account claims, when you choose Apple sign-in</td>
+      </tr>
+      <tr>
+      <td><strong>Apple App Store / Google Play</strong></td>
+      <td>United States / global</td>
+      <td>App distribution</td>
+      <td>Device identifiers and install metadata as required by the store</td>
+      </tr>
+      <tr>
+      <td><strong>GIPHY</strong> (Giphy, Inc.)</td>
+      <td>United States</td>
+      <td>GIF search inside the chat composer</td>
+      <td>Your search query (only when you actively use the GIF picker)</td>
+      </tr>
+      </tbody>
+      </table>
+      <p>We may also disclose information:</p>
+      <ul>
+      <li>to comply with valid legal process, lawful warrants, sanctions obligations, or law-enforcement requests properly served;</li>
+      <li>to protect the safety of users or the public, where we reasonably believe disclosure is necessary;</li>
+      <li>to a successor entity in the event of a merger, acquisition, or asset transfer (subject to this Policy continuing to govern).</li>
+      </ul>
+      <h3>6.1 Customer Support Access</h3>
+      <p>Members of our customer-support team can, in the course of helping you with a ticket, view:</p>
+      <ul>
+      <li>Your profile fields (username, email, country, ban status)</li>
+      <li>Your account balances and transaction history</li>
+      <li>Metadata about your direct messages — sender, recipient, timestamp, whether a message has been reported by another user. <strong>They cannot read the contents of your end-to-end encrypted direct messages or group chats.</strong> This is enforced architecturally: the encryption keys are held only on your devices.</li>
+      <li>Public community-room posts (these are public to all members of the room)</li>
+      </ul>
+      <p>Higher-tier support and finance staff additionally see:</p>
+      <ul>
+      <li>Refund history and the ability to issue refunds (with caps that depend on staff tier)</li>
+      <li>Ban history and the ability to ban or unban accounts</li>
+      </ul>
+      <p>Every customer-support action is recorded in an append-only audit log. We will provide you with a record of who accessed your account on request, subject to identity verification.</p>
+      <h2>7. International Data Transfers</h2>
+      <p>The majority of our sub-processors are located in the United States. Where you are located in the European Economic Area, the United Kingdom, or another jurisdiction with a cross-border transfer regime, your personal information may be transferred to these US sub-processors under one of the following safeguards:</p>
+      <ul>
+      <li>the European Commission's Standard Contractual Clauses (2021), incorporated into our DPA with the relevant provider;</li>
+      <li>the UK Addendum to the SCCs, where applicable;</li>
+      <li>the EU-US Data Privacy Framework certification, where the provider is certified;</li>
+      <li>additional supplementary measures (encryption in transit, encryption at rest, access controls).</li>
+      </ul>
+      <p>We are progressively documenting Transfer Impact Assessments per provider; if you would like a copy of the assessment for a specific provider, contact us at the address in §14.</p>
+      <h2>8. Data Retention</h2>
+      <p>We retain personal information only as long as necessary to provide the Services, comply with legal obligations, resolve disputes, and prevent fraud. Specific retention windows:</p>
+      <table>
+      <thead>
+      <tr>
+      <th>Data</th>
+      <th>Retention</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>Account profile, balances</td>
+      <td>Lifetime of your account; on deletion request, anonymised within 30 days unless retained per AML/CTF rules below</td>
+      </tr>
+      <tr>
+      <td>Direct-message ciphertext</td>
+      <td>30 days from send (then auto-purged)</td>
+      </tr>
+      <tr>
+      <td>Community-room messages</td>
+      <td>7 days (then auto-purged)</td>
+      </tr>
+      <tr>
+      <td>Transactions, ledger entries</td>
+      <td>7 years from creation, where required by AU AML / CTF Act 2006 and equivalent regulations</td>
+      </tr>
+      <tr>
+      <td>KYC verification status (pass/fail references)</td>
+      <td>7 years from last activity</td>
+      </tr>
+      <tr>
+      <td>Customer-support tickets</td>
+      <td>3 years from closure</td>
+      </tr>
+      <tr>
+      <td>Customer-support audit log (<code>cs_actions</code>)</td>
+      <td>7 years</td>
+      </tr>
+      <tr>
+      <td>Error logs (Sentry, internal)</td>
+      <td>90 days</td>
+      </tr>
+      <tr>
+      <td>Push notification tokens</td>
+      <td>Until you sign out, uninstall (then auto-purged on next stale-token sweep), or revoke notification permission</td>
+      </tr>
+      <tr>
+      <td>Voice/video call records</td>
+      <td>Currently retained while the account is active; under review for a 90-day retention cap</td>
+      </tr>
+      </tbody>
+      </table>
+      <p>Where you exercise the right to erasure (§10), data subject to AML/CTF retention is anonymised rather than deleted: your name, email, phone, profile contents, and message content are scrubbed; transaction records that we are legally required to retain remain in tokenised, non-attributable form.</p>
+      <h2>9. Security</h2>
+      <p>We use industry-standard safeguards to protect your information:</p>
+      <ul>
+      <li>TLS for all data in transit</li>
+      <li>Encryption at rest for backend storage where applicable</li>
+      <li>End-to-end encryption (NaCl box, Curve25519 + XSalsa20 + Poly1305) for direct messages and group chats; the server cannot read DM contents</li>
+      <li>DTLS-SRTP for voice and video calls</li>
+      <li>Row-Level Security (RLS) on every database table containing user data</li>
+      <li>Append-only audit logging for customer-support actions and security-relevant events</li>
+      <li>Multi-factor authentication and session-token rotation</li>
+      <li>Idempotent transaction handling and atomic balance updates to prevent double-spend / double-credit</li>
+      </ul>
+      <p>No system can guarantee absolute security. You are responsible for keeping your device, biometrics, and PIN secure. Notify us immediately if you suspect your account has been compromised.</p>
+      <h2>10. Your Rights</h2>
+      <p>Depending on where you reside, you have the right to:</p>
+      <ul>
+      <li><strong>Access</strong> the personal information we hold about you (via in-app data export or by contacting us)</li>
+      <li><strong>Correct</strong> information that is inaccurate or incomplete</li>
+      <li><strong>Erase</strong> your account and associated personal information (subject to AML/CTF retention as described in §8)</li>
+      <li><strong>Restrict or object</strong> to certain processing</li>
+      <li><strong>Withdraw consent</strong> for processing based on consent (push previews, optional location, optional analytics)</li>
+      <li><strong>Portability</strong> — receive your data in a machine-readable format</li>
+      <li><strong>Lodge a complaint</strong> with a supervisory authority (in Australia, the Office of the Australian Information Commissioner; in the EU, your local data protection authority; in the UK, the ICO)</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at <strong>contact@nepalipay.com</strong>. We will respond within 30 days (GDPR / UK-GDPR), 45 days (CCPA), or as soon as practicable under APP. We may require identity verification before fulfilling a request to prevent fraudulent access. Subject-rights requests are recorded in an internal log so we can demonstrate compliance.</p>
+      <h3>10.1 California Residents (CCPA)</h3>
+      <p>California residents may additionally request information about the categories of personal information we have collected, sold, or shared in the prior 12 months. <strong>We do not sell or share your personal information</strong> within the meaning of the CCPA. You have the right to opt out of any future &quot;share&quot; via the contact in §14, and to non-discrimination for exercising any CCPA right.</p>
+      <h3>10.2 EU / UK Residents (GDPR)</h3>
+      <p>You may contact your local supervisory authority to lodge a complaint about our processing. Our lead supervisory authority for EU matters has not been formally designated; the Office of the Australian Information Commissioner is our primary regulator.</p>
+      <h2>11. Children</h2>
+      <p>The Services are not intended for individuals under 18 years of age. We require all account holders to confirm they are 18 or older during signup, and we collect a date of birth to enforce this. We do not knowingly collect personal information from anyone under 13; if we discover that we have inadvertently done so, we will delete the account and any associated data without delay.</p>
+      <p>Cash-based games are restricted to users who are 18+ and are subject to additional regional restrictions where local law requires.</p>
+      <h2>12. Beta Status Notice</h2>
+      <p>NepaliPay is currently offered as a beta-stage platform on Apple TestFlight and equivalent Android channels. Features, data flows, and providers may change during development. We will notify users of material privacy-affecting changes via in-app notice or email and reflect them with a revised &quot;Last Updated&quot; date and version number.</p>
+      <h2>13. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy periodically. Material changes will be communicated via in-app notice or email, with at least 14 days' notice before they take effect (where feasible). The &quot;Last Updated&quot; date and version number at the top of this document indicate the most recent revision. Continued use of the Services after changes take effect constitutes acceptance of the revised policy.</p>
+      <h2>14. Contact</h2>
+      <p>For privacy-related questions, requests, complaints, or to exercise any right described above:</p>
+      <p><strong>Fintex Australia Pty Ltd (trading as NepaliPay)</strong>
+      Email: <strong>contact@nepalipay.com</strong></p>
+      <p>We aim to respond within 48 hours and to resolve subject-rights requests within the timelines stated in §10.</p>
+      <h2>15. Definitions</h2>
+      <ul>
+      <li><strong>Personal information / personal data</strong> — information that identifies you or could reasonably identify you, directly or in combination with other information.</li>
+      <li><strong>Processing</strong> — any operation performed on personal information (collection, storage, transmission, use, deletion).</li>
+      <li><strong>Controller</strong> — Fintex Australia Pty Ltd, which decides why and how your personal information is processed.</li>
+      <li><strong>Sub-processor / processor</strong> — third party that processes personal information on our behalf under our instructions.</li>
+      <li><strong>End-to-end encrypted (E2E)</strong> — content encrypted on your device with keys we do not hold; only you and the intended recipient can decrypt.</li>
+      </ul>
+      <h2>16. Version history and changes</h2>
+      <h3>Changes in version 2.1 (12 May 2026)</h3>
+      <p>For transparency, what changed between version 2.0 (2 May 2026) and version 2.1 (12 May 2026):</p>
+      <ul>
+      <li><strong>Added Twilio</strong> as a disclosed sub-processor. Twilio delivers our SMS / WhatsApp one-time passcodes; it has been used in this role since before version 2.0 but was inadvertently omitted from the v2.0 sub-processor table. Discovered during the 2026-05-12 vendor-register audit.</li>
+      <li><strong>Added Vercel</strong> as a disclosed sub-processor for the marketing website at nepalipay.com (mobile application data is not routed via Vercel).</li>
+      <li><strong>Clarified Cloudflare's role</strong> as a sub-processor of Supabase / Vercel rather than a direct vendor relationship — NepaliPay does not hold a direct Cloudflare contract.</li>
+      </ul>
+      <p>These changes describe processing that has been in place; they are disclosure corrections, not new processing.</p>
+      <h3>Changes since Version 1.0</h3>
+      <p>The principal changes between version 1.0 (February 2026) and version 2.0 (2 May 2026):</p>
+      <ul>
+      <li><strong>Identified the controller:</strong> Fintex Australia Pty Ltd is named as the legal entity behind NepaliPay.</li>
+      <li><strong>Replaced the processor list with the actual sub-processor stack.</strong> Removed references to providers we do not use (Web3Auth, Plaid, Lithic, SumSub). Added providers we do use and had not disclosed: Sentry (error monitoring), PostHog (analytics), Tawk.to (CS chat), Retool (CS admin), Expo Push, Apple OAuth, Google OAuth, GIPHY.</li>
+      <li><strong>Added §6.1 Customer Support Access</strong> describing what support staff can and cannot see, including the architectural inability to read end-to-end encrypted message content.</li>
+      <li><strong>Added §7 International Data Transfers</strong> describing SCC / DPF / supplementary-measure safeguards for transfers to US sub-processors.</li>
+      <li><strong>Added §8 Data Retention</strong> with specific windows per data category.</li>
+      <li><strong>Added §10 Your Rights</strong> with concrete response timeframes per regulation, plus §10.1 CCPA and §10.2 GDPR addenda.</li>
+      <li><strong>Added age-of-account-holder confirmation</strong> to §11 to reflect the 18+ age gate at signup.</li>
+      <li><strong>Removed §3.2 SumSub references and §3.5 bank-linking section</strong> — neither is currently part of the platform.</li>
+      <li><strong>Removed Web3Auth references in §3.1</strong> — authentication is via Supabase Auth, Sign in with Apple, and Sign in with Google.</li>
+      </ul>
 
       <div class="doc-foot">
-        Last updated April 25, 2026.
-        Need an offline copy? <a href="PRIVACY_POLICY.pdf">Download the previous PDF version</a>
-        (archived; the HTML page above is canonical).
+        Last updated May 2026 · Version 2.1. The <a href="PRIVACY_POLICY.pdf">PDF is an archived prior version</a>.
       </div>
     </article>
   </body>
