@@ -53,8 +53,8 @@
       <h3>1.4 Device, usage, and support</h3>
       <ul>
         <li>Device and app information, IP address, approximate country from request headers, notification tokens, security events, and usage information needed to run and protect the service.</li>
-        <li>Diagnostics when error reporting is configured. Product analytics is off until you opt in on your device; if PostHog is configured and you enable Product analytics in App Settings, events can include a user identifier, feature activity, transaction amount and currency, gift credit values, or game stake and room identifiers.</li>
-        <li>If the GIF picker is configured and you search it, the search terms are sent to GIPHY.</li>
+        <li>Diagnostics if error reporting is available in your app. Product analytics is off until you opt in on your device; if analytics is available and you enable Product analytics in App Settings, events sent to PostHog can include a user identifier, feature activity, transaction amount and currency, gift credit values, or game stake and room identifiers.</li>
+        <li>If the GIF picker is available and you search it, the search terms are sent to GIPHY.</li>
         <li>Information you provide when you contact support or report a problem.</li>
       </ul>
 
@@ -68,8 +68,8 @@
 
       <h2>3. Who receives information</h2>
       <p>
-        Information is shared as needed for the feature you use. The source for
-        the current app contains these integrations:
+        The following services may receive information when you use features
+        that rely on them. Availability can vary by device, account, and location:
       </p>
       <ul>
         <li><strong>Supabase</strong> provides backend, authentication, database, storage, and related services.</li>
@@ -78,8 +78,8 @@
         <li><strong>Apple and Google</strong> provide sign-in, app distribution, and platform purchase services where used.</li>
         <li><strong>Twilio</strong> delivers SMS or WhatsApp verification codes when phone verification is used.</li>
         <li><strong>Expo Push Service, Apple Push Notification service, and Firebase Cloud Messaging</strong> deliver push tokens and notification payloads when notifications are used.</li>
-        <li><strong>Sentry</strong> receives diagnostics when configured. <strong>PostHog</strong> receives product analytics events only when configured and you opt in on your device.</li>
-        <li><strong>GIPHY</strong> receives GIF search requests when the picker is configured and you use it.</li>
+        <li><strong>Sentry</strong> receives diagnostics if error reporting is available in your app. <strong>PostHog</strong> receives product analytics events only if analytics is available and you opt in on your device.</li>
+        <li><strong>GIPHY</strong> receives GIF search requests when the picker is available and you use it.</li>
       </ul>
       <p>
         Information you post in public areas is available to other users. We may
