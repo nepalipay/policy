@@ -43,11 +43,11 @@
 
       <h3>1.3 Messages, content, and calls</h3>
       <ul>
-        <li>Messages and their delivery metadata, including sender, recipient or conversation, and time. The app encrypts private direct and group message content in supported flows. Public room content and message metadata are different from private message content.</li>
+        <li>Messages and their delivery metadata, including sender, recipient or conversation, and time. The app encrypts private direct and group message content in supported flows. Public room content and message metadata are different from private message content. If a message flow cannot use private-message encryption, do not assume that protection applies.</li>
         <li>Posts, comments, reactions, media, and other content that you choose to share. Content posted to public areas can be seen by other users.</li>
         <li>If you choose Location in a chat and grant foreground location permission, the app gets one position and sends its latitude and longitude in a location message to that conversation. It does not use this action for background tracking.</li>
         <li>Call participation and connection records needed to set up and operate voice or video calls.</li>
-        <li>If message previews are enabled, a short preview can be included in a push notification sent through notification providers. Device settings and app preferences affect what appears on the receiving device.</li>
+        <li>Some supported private-message flows attach a short preview to notification metadata. When the receiving user permits previews, that preview can be sent through notification providers. A notification preview is separate from encrypted message content.</li>
       </ul>
 
       <h3>1.4 Device, usage, and support</h3>
@@ -92,7 +92,9 @@
         We use access controls and technical safeguards for information in the
         service. Private message encryption protects message content in supported
         flows; it does not cover account details, message metadata, public room
-        content, or a notification preview that is sent to a push provider.
+        content, or a notification preview that is sent to a push provider. If a
+        message flow cannot use private-message encryption, do not assume that
+        protection applies.
         No security measure can remove all risk.
       </p>
       <p>
@@ -100,7 +102,7 @@
         needs. Different records can have different retention periods. Account
         deletion may leave records that must be retained for those purposes.
         Request account deletion through Me → Delete Account in the app, or
-        follow the <a href="https://www.nepalipay.com/deleteaccount">public deletion request guide</a>
+        follow the <a href="https://nepalipay.com/deleteaccount">public deletion request guide</a>
         if you cannot use the app. You can also email
         <a href="mailto:support@nepalipay.com">support@nepalipay.com</a>.
         A request is not confirmation that deletion is complete.
