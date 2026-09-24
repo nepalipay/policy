@@ -6,7 +6,7 @@
     <title>Privacy Policy — NepaliPay</title>
     <meta
       name="description"
-      content="How NepaliPay collects, uses, discloses, and safeguards your personal information."
+      content="How NepaliPay handles information in its mobile app and related services."
     />
     <link rel="stylesheet" href="assets/doc.css" />
   </head>
@@ -16,167 +16,106 @@
 
       <p class="doc-eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="doc-meta">Effective Date: April 25, 2026</p>
+      <p class="doc-meta">Proposed update for owner review — effective date pending approval</p>
 
       <p>
-        NepaliPay (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) operates the NepaliPay
-        mobile application and the marketing website at nepalipay.com. This Privacy Policy
-        explains how we collect, use, disclose, and safeguard your information.
+        NepaliPay provides a mobile app, customer support, and a marketing website.
+        This notice describes information used by those services. The availability
+        of payment and wallet features can vary; the relevant data flows below
+        apply when you use those features.
       </p>
 
-      <h2>1. Information we collect</h2>
-
-      <h3>1.1 Personal information</h3>
+      <h2>1. Information we handle</h2>
+      <h3>1.1 Account and profile</h3>
       <ul>
-        <li>Full name and chosen username</li>
-        <li>Email address (signup)</li>
-        <li>Phone number (SMS one-time-code verification)</li>
-        <li>Date of birth (age-gate for cash games — must be 18 or older)</li>
-        <li>Profile photo and banner (optional)</li>
-        <li>OAuth provider identifier when you sign in with Google or Apple</li>
+        <li>Information you provide to register and maintain an account, such as an email address or phone number, username, display name, date of birth, and optional profile content.</li>
+        <li>Sign-in identifiers and account security information used for authentication and abuse prevention.</li>
       </ul>
 
-      <h3>1.2 Authentication &amp; security</h3>
+      <h3>1.2 Payments and activity</h3>
       <ul>
-        <li>Hashed account password (bcrypt; we never see your plaintext)</li>
-        <li>Hashed 4-digit transaction PIN (bcrypt) used to authorise withdrawals</li>
-        <li>
-          Device biometric capability flag (Face ID / Touch ID / fingerprint) — biometric data
-          itself stays on your device and is never transmitted
-        </li>
-        <li>TOTP shared secret if you enable two-factor authentication</li>
+        <li>Transaction records, amounts, status, timestamps, and related account or counterparty references for features you use, including transfers, gifts, and store credit purchases.</li>
+        <li>If card deposits are available and you use them, Stripe handles card entry and processing; we handle the resulting payment and account records.</li>
+        <li>If Circle wallet features are available and you use them, wallet addresses, transfer instructions, and transaction identifiers are processed for those features. On-chain activity may be visible on a public blockchain.</li>
+        <li>Apple or Google may process an in-app store credit purchase on the corresponding platform. We receive purchase information needed to verify and credit it.</li>
       </ul>
 
-      <h3>1.3 Financial information</h3>
+      <h3>1.3 Messages, content, and calls</h3>
       <ul>
-        <li>
-          Payment card details (collected and tokenised by Stripe; we never see or store the full
-          card number)
-        </li>
-        <li>Transaction history and wallet balances (USD, USDC, USDT)</li>
-        <li>
-          Stablecoin wallet addresses (via Circle); on-chain transfers are public on the Polygon
-          blockchain by design
-        </li>
-        <li>Gift purchases, game stakes and payouts</li>
+        <li>Messages and their delivery metadata, including sender, recipient or conversation, and time. The app encrypts private direct and group message content in supported flows. Public room content and message metadata are different from private message content.</li>
+        <li>Posts, comments, reactions, media, and other content that you choose to share. Content posted to public areas can be seen by other users.</li>
+        <li>Call participation and connection records needed to set up and operate voice or video calls.</li>
+        <li>If message previews are enabled, a short preview can be included in a push notification sent through notification providers. Device settings and app preferences affect what appears on the receiving device.</li>
       </ul>
 
-      <h3>1.4 Communications &amp; content</h3>
+      <h3>1.4 Device, usage, and support</h3>
       <ul>
-        <li>
-          Direct messages and group chat messages — end-to-end encrypted with libsodium
-          <code>nacl.box</code>; we cannot read the plaintext
-        </li>
-        <li>Public room messages, posts, comments, reactions, and stories you publish</li>
-        <li>Photos, videos, voice recordings, and stickers you upload</li>
-        <li>
-          Voice and video calls — peer-to-peer WebRTC with DTLS-SRTP encryption; not recorded or
-          stored on our servers
-        </li>
+        <li>Device and app information, IP address, notification tokens, security events, and usage information needed to run and protect the service.</li>
+        <li>Diagnostics and product analytics when the corresponding services are configured.</li>
+        <li>Information you provide when you contact support or report a problem.</li>
       </ul>
 
-      <h3>1.5 Device &amp; usage data</h3>
-      <ul>
-        <li>Device model, OS version, app version and build number</li>
-        <li>Push-notification token (Apple APNs / Google FCM via Expo Push)</li>
-        <li>Device fingerprint (used for rate-limiting and abuse prevention)</li>
-        <li>
-          IP address and approximate (city-level) location for fraud screening, sanctions
-          compliance, and the geo-gate on cash games
-        </li>
-        <li>Online / away / busy / offline presence state</li>
-        <li>
-          App usage patterns, in-app search queries, screen interactions, and crash reports
-          (via Sentry)
-        </li>
-      </ul>
-
-      <h2>2. How we use your information</h2>
-      <ul>
-        <li>Provide and maintain our services</li>
-        <li>Process financial transactions, refunds, and chargebacks</li>
-        <li>Verify your identity and prevent fraud and unauthorised access</li>
-        <li>Comply with applicable financial-services and AML regulations</li>
-        <li>Send transaction notifications, security alerts, and product updates</li>
-        <li>Improve product reliability via aggregated, anonymised analytics</li>
-        <li>Comply with valid legal and regulatory obligations</li>
-      </ul>
-
-      <h2>3. Data sharing</h2>
+      <h2>2. Why we use it</h2>
       <p>
-        We share specific data with the following processors and only to the extent each one
-        needs to do its job:
+        We use this information to provide accounts, communication, payments and
+        other requested features; deliver notifications; respond to support
+        requests; maintain security; investigate misuse; and understand and
+        improve service reliability.
+      </p>
+
+      <h2>3. Who receives information</h2>
+      <p>
+        Information is shared as needed for the feature you use. The source for
+        the current app contains these integrations:
       </p>
       <ul>
-        <li>
-          <strong>Stripe</strong> — card payments. Receives your card details, email, name, and
-          the deposit amount.
-        </li>
-        <li>
-          <strong>Circle</strong> — USDC custody and on-chain transfers. Receives your wallet
-          address, transfer amounts, and (for higher-value withdrawals) KYC information you
-          submit directly to them.
-        </li>
-        <li>
-          <strong>SMS provider</strong> — receives your phone number to deliver the one-time-code
-          SMS during verification.
-        </li>
-        <li>
-          <strong>Apple Push Notification service / Google Firebase Cloud Messaging
-          (via Expo Push)</strong> — receives your device push token and the notification
-          payload.
-        </li>
-        <li>
-          <strong>Public blockchain (Polygon)</strong> — every USDC transfer to or from an
-          external wallet is permanently recorded on a public ledger by design.
-        </li>
-        <li>
-          <strong>Sentry</strong> — receives anonymised crash logs, performance metrics, and
-          breadcrumbs. PII is scrubbed before transmission.
-        </li>
-        <li>
-          <strong>OFAC / Chainalysis sanctions lists</strong> — destination addresses are
-          screened on every withdrawal; no personal data is sent.
-        </li>
-        <li><strong>Law enforcement</strong> — only when required by valid legal process.</li>
-      </ul>
-      <p>We never sell your personal data to third parties.</p>
-
-      <h2>4. Data security</h2>
-      <ul>
-        <li>All data transmitted via TLS 1.2 or higher</li>
-        <li>Authentication tokens stored in device secure storage (Keychain / Keystore)</li>
-        <li>Row-level security on every database table</li>
-        <li>PII scrubbed from error reports and analytics events</li>
-        <li>Biometric and two-factor authentication available for account login</li>
-        <li>4-digit transaction PIN required for every external USDC withdrawal</li>
-        <li>Sanctions screening on every withdrawal destination address</li>
-      </ul>
-
-      <h2>5. Your rights</h2>
-      <p>Depending on your jurisdiction, you may:</p>
-      <ul>
-        <li>Access, correct, or delete your personal data</li>
-        <li>Export your data in a portable format (in-app: Settings → Privacy → Export my data)</li>
-        <li>Withdraw consent for non-essential data processing</li>
-        <li>Lodge a complaint with a supervisory authority</li>
+        <li><strong>Supabase</strong> provides backend, authentication, database, storage, and related services.</li>
+        <li><strong>Stripe</strong> processes card deposits when that feature is available and used.</li>
+        <li><strong>Circle</strong> processes wallet and stablecoin operations when those features are available and used.</li>
+        <li><strong>Apple and Google</strong> provide sign-in, app distribution, and platform purchase services where used.</li>
+        <li><strong>Twilio</strong> delivers SMS or WhatsApp verification codes when phone verification is used.</li>
+        <li><strong>Expo Push Service, Apple Push Notification service, and Firebase Cloud Messaging</strong> deliver push tokens and notification payloads when notifications are used.</li>
+        <li><strong>Sentry and PostHog</strong> receive diagnostics or analytics events when configured.</li>
       </ul>
       <p>
-        Account-level deletion is available in-app: <strong>Me → Delete Account</strong>. See
-        <a href="https://nepalipay.com/deleteaccount">nepalipay.com/deleteaccount</a> for the
-        full deletion path, retained data, and timelines.
+        Information you post in public areas is available to other users. We may
+        disclose information when required by applicable law or to protect users
+        and the service.
+      </p>
+
+      <h2>4. Security and retention</h2>
+      <p>
+        We use access controls and technical safeguards for information in the
+        service. Private message encryption protects message content in supported
+        flows; it does not cover account details, message metadata, public room
+        content, or a notification preview that is sent to a push provider.
+        No security measure can remove all risk.
+      </p>
+      <p>
+        We keep information for service, security, dispute, and applicable legal
+        needs. Different records can have different retention periods. Account
+        deletion may leave records that must be retained for those purposes.
+        See <a href="https://nepalipay.com/deleteaccount">Delete Your Account</a>
+        for the account deletion path, or contact us about a specific record.
+      </p>
+
+      <h2>5. Your choices and requests</h2>
+      <p>
+        You can update some profile details in the app, control available
+        notification settings, and request account deletion. You may also ask
+        to access, correct, or delete information, subject to applicable law
+        and any records we need to retain.
       </p>
 
       <h2>6. Contact</h2>
       <p>
-        For privacy inquiries, data-subject requests, or to exercise your rights:
+        For privacy questions and requests, email
         <a href="mailto:privacy@nepalipay.com">privacy@nepalipay.com</a>.
       </p>
 
       <div class="doc-foot">
-        Last updated April 25, 2026.
-        Need an offline copy? <a href="PRIVACY_POLICY.pdf">Download the previous PDF version</a>
-        (archived; the HTML page above is canonical).
+        This proposed update is pending owner review and is not yet effective.
+        The <a href="PRIVACY_POLICY.pdf">PDF is an archived earlier version</a>.
       </div>
     </article>
   </body>
