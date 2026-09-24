@@ -19,7 +19,8 @@
       <p class="doc-meta">Proposed update for owner review — effective date pending approval</p>
 
       <p>
-        NepaliPay provides a mobile app, customer support, and a marketing website.
+        Fintex Australia Pty Ltd operates NepaliPay's mobile app, customer support,
+        and marketing website.
         This notice describes information used by those services. The availability
         of payment and wallet features can vary; the relevant data flows below
         apply when you use those features.
@@ -28,7 +29,7 @@
       <h2>1. Information we handle</h2>
       <h3>1.1 Account and profile</h3>
       <ul>
-        <li>Information you provide to register and maintain an account, such as an email address or phone number, username, display name, date of birth, and optional profile content.</li>
+        <li>Information you provide to register and maintain an account, such as an email address or phone number, username, display name, full name, date of birth, and optional profile content. Personal Details can also save a mailing address if you enter one.</li>
         <li>Sign-in identifiers and account security information used for authentication and abuse prevention.</li>
       </ul>
 
@@ -44,14 +45,16 @@
       <ul>
         <li>Messages and their delivery metadata, including sender, recipient or conversation, and time. The app encrypts private direct and group message content in supported flows. Public room content and message metadata are different from private message content.</li>
         <li>Posts, comments, reactions, media, and other content that you choose to share. Content posted to public areas can be seen by other users.</li>
+        <li>If you choose Location in a chat and grant foreground location permission, the app gets one position and sends its latitude and longitude in a location message to that conversation. It does not use this action for background tracking.</li>
         <li>Call participation and connection records needed to set up and operate voice or video calls.</li>
         <li>If message previews are enabled, a short preview can be included in a push notification sent through notification providers. Device settings and app preferences affect what appears on the receiving device.</li>
       </ul>
 
       <h3>1.4 Device, usage, and support</h3>
       <ul>
-        <li>Device and app information, IP address, notification tokens, security events, and usage information needed to run and protect the service.</li>
-        <li>Diagnostics and product analytics when the corresponding services are configured.</li>
+        <li>Device and app information, IP address, approximate country from request headers, notification tokens, security events, and usage information needed to run and protect the service.</li>
+        <li>Diagnostics when error reporting is configured. Product analytics is off until you opt in on your device; if PostHog is configured and you enable Product analytics in App Settings, events can include a user identifier, feature activity, transaction amount and currency, gift credit values, or game stake and room identifiers.</li>
+        <li>If the GIF picker is configured and you search it, the search terms are sent to GIPHY.</li>
         <li>Information you provide when you contact support or report a problem.</li>
       </ul>
 
@@ -75,7 +78,8 @@
         <li><strong>Apple and Google</strong> provide sign-in, app distribution, and platform purchase services where used.</li>
         <li><strong>Twilio</strong> delivers SMS or WhatsApp verification codes when phone verification is used.</li>
         <li><strong>Expo Push Service, Apple Push Notification service, and Firebase Cloud Messaging</strong> deliver push tokens and notification payloads when notifications are used.</li>
-        <li><strong>Sentry and PostHog</strong> receive diagnostics or analytics events when configured.</li>
+        <li><strong>Sentry</strong> receives diagnostics when configured. <strong>PostHog</strong> receives product analytics events only when configured and you opt in on your device.</li>
+        <li><strong>GIPHY</strong> receives GIF search requests when the picker is configured and you use it.</li>
       </ul>
       <p>
         Information you post in public areas is available to other users. We may
@@ -95,8 +99,10 @@
         We keep information for service, security, dispute, and applicable legal
         needs. Different records can have different retention periods. Account
         deletion may leave records that must be retained for those purposes.
-        See <a href="https://nepalipay.com/deleteaccount">Delete Your Account</a>
-        for the account deletion path, or contact us about a specific record.
+        Request account deletion through Me → Delete Account in the app, or
+        email <a href="mailto:support@nepalipay.com">support@nepalipay.com</a>
+        if you cannot use the app. A request is not confirmation that deletion
+        is complete.
       </p>
 
       <h2>5. Your choices and requests</h2>
@@ -109,8 +115,8 @@
 
       <h2>6. Contact</h2>
       <p>
-        For privacy questions and requests, email
-        <a href="mailto:privacy@nepalipay.com">privacy@nepalipay.com</a>.
+        Fintex Australia Pty Ltd handles NepaliPay privacy questions and
+        requests. Email <a href="mailto:contact@nepalipay.com">contact@nepalipay.com</a>.
       </p>
 
       <div class="doc-foot">
