@@ -29,7 +29,7 @@
       <h2>1. Information we handle</h2>
       <h3>1.1 Account and profile</h3>
       <ul>
-        <li>Information you provide to register and maintain an account, such as an email address or phone number, username, display name, full name, date of birth, and optional profile content. Personal Details can also save a mailing address if you enter one.</li>
+        <li>Information you provide to register and maintain an account, such as an email address or phone number, username, display name, full name, and optional profile content. We ask for a self-reported date of birth to check the app's 18-or-older access requirement, including for an existing account without a recorded date of birth. This age check is not identity verification. Personal Details can also save a mailing address if you enter one.</li>
         <li>Sign-in identifiers and account security information used for authentication and abuse prevention.</li>
       </ul>
 
@@ -43,7 +43,7 @@
 
       <h3>1.3 Messages, content, and calls</h3>
       <ul>
-        <li>Messages and their delivery metadata, including sender, recipient or conversation, and time. The app encrypts private direct and group message content in supported flows. Public room content and message metadata are different from private message content. If a message flow cannot use private-message encryption, do not assume that protection applies.</li>
+        <li>Messages and their delivery metadata, including sender, recipient or conversation, and time. The app encrypts private direct and group message content in supported flows. Public room messages are not end-to-end encrypted, and message metadata remains visible to us. If a message flow cannot use private-message encryption, do not assume that protection applies.</li>
         <li>Posts, comments, reactions, media, and other content that you choose to share. Content posted to public areas can be seen by other users.</li>
         <li>If you choose Location in a chat and grant foreground location permission, the app gets one position and sends its latitude and longitude in a location message to that conversation. It does not use this action for background tracking.</li>
         <li>Call participation and connection records needed to set up and operate voice or video calls.</li>
@@ -80,7 +80,6 @@
         <li><strong>Expo Push Service, Apple Push Notification service, and Firebase Cloud Messaging</strong> deliver push tokens and notification payloads when notifications are used.</li>
         <li><strong>Sentry</strong> receives diagnostics if error reporting is available in your app. <strong>PostHog</strong> receives product analytics events only if analytics is available and you opt in on your device.</li>
         <li><strong>GIPHY</strong> receives GIF search requests when the picker is available and you use it.</li>
-        <li>When Ask AI is available and you use it, the messages in that AI conversation and context needed to answer may be sent to <strong>OpenRouter and its selected AI provider</strong>.</li>
       </ul>
       <p>
         Information you post in public areas is available to other users. We may
