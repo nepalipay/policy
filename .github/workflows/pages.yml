@@ -1,0 +1,157 @@
+name: Publish reviewed policy site
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: Full reviewed main commit SHA to publish
+        required: true
+        type: string
+
+permissions: {}
+
+concurrency:
+  group: policy-pages
+  cancel-in-progress: false
+
+jobs:
+  artifact:
+    if: >-
+      github.repository == 'nepalipay/policy' &&
+      github.ref == 'refs/heads/main' &&
+      github.actor == 'bidurkhatri' &&
+      github.triggering_actor == 'bidurkhatri'
+    runs-on: [self-hosted, Windows, X64, nepalipay-policy]
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    outputs:
+      source_sha: ${{ steps.site.outputs.source_sha }}
+    steps:
+      - name: Checkout the main commit selected at dispatch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          set-safe-directory: false
+
+      - name: Verify Windows artifact tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$RUNNER_OS" = Windows
+          tar_version="$(tar --version)"
+          [[ "$tar_version" == *"GNU tar"* ]] || { echo 'GNU tar is required.'; exit 1; }
+          git --version
+          printf '%s\n' "${tar_version%%$'\n'*}"
+
+      - name: Bind and stage only the public site files
+        id: site
+        shell: pwsh
+        env:
+          REVIEWED_MAIN_SHA: ${{ inputs.expected_sha }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          if ($env:REVIEWED_MAIN_SHA -cnotmatch '^[0-9a-f]{40}$') {
+            throw 'A full lowercase reviewed commit SHA is required.'
+          }
+          $sourceRoot = [IO.Path]::GetFullPath($env:GITHUB_WORKSPACE)
+          $sourceSha = (& git -C $sourceRoot rev-parse HEAD).Trim()
+          if ($LASTEXITCODE -ne 0 -or $sourceSha -cne $env:GITHUB_SHA -or $sourceSha -cne $env:REVIEWED_MAIN_SHA) {
+            throw 'The checked-out main commit does not match the reviewed SHA.'
+          }
+          $files = @(
+            'CNAME',
+            'PRIVACY_POLICY.pdf',
+            'SUPPORT.pdf',
+            'Support_and_Dispute_Policy.pdf',
+            'TERMS_OF_SERVICE.pdf',
+            'access-control-policy.pdf',
+            'assets/doc.css',
+            'business-continuity-and-disaster-recovery-plan.pdf',
+            'data-retention-and-disposal-policy.pdf',
+            'dispute.html',
+            'incident-response-plan.pdf',
+            'index.html',
+            'index.pdf',
+            'information-security-policy.pdf',
+            'privacy.html',
+            'risk-management-policy.pdf',
+            'secure-sdlc-policy.pdf',
+            'security-overview.pdf',
+            'support.html',
+            'terms.html',
+            'vendor-management-policy.pdf',
+            'vulnerability-management-policy.pdf'
+          )
+          $siteDirectory = Join-Path $env:RUNNER_TEMP "policy-site-$env:GITHUB_RUN_ID-$env:GITHUB_RUN_ATTEMPT"
+          $archivePath = "$siteDirectory.zip"
+          if (Test-Path -LiteralPath $siteDirectory) { throw 'The staging directory must be fresh.' }
+          if (Test-Path -LiteralPath $archivePath) { throw 'The archive path must be fresh.' }
+          $entries = & git -C $sourceRoot ls-tree -r $sourceSha -- $files
+          if ($LASTEXITCODE -ne 0 -or $entries.Count -ne $files.Count) { throw 'The reviewed public file set is incomplete.' }
+          $blobs = @{}
+          foreach ($entry in $entries) {
+            if ($entry -cnotmatch '^100644 blob ([0-9a-f]{40})\t(.+)$') { throw 'Site inputs must be regular committed files.' }
+            $blobs[$Matches[2]] = $Matches[1]
+          }
+          foreach ($relative in $files) {
+            if (-not $blobs.ContainsKey($relative)) { throw 'A reviewed public file is missing.' }
+          }
+          & git -c core.autocrlf=false -C $sourceRoot archive --format=zip "--output=$archivePath" $sourceSha -- $files
+          if ($LASTEXITCODE -ne 0) { throw 'Could not archive the reviewed public files.' }
+          Expand-Archive -LiteralPath $archivePath -DestinationPath $siteDirectory
+          foreach ($relative in $files) {
+            $staged = Join-Path $siteDirectory $relative
+            $item = Get-Item -LiteralPath $staged
+            if ($item.PSIsContainer -or ($item.Attributes -band [IO.FileAttributes]::ReparsePoint)) { throw 'Staged files must be regular.' }
+            $blob = (& git -C $sourceRoot hash-object --no-filters -- $staged).Trim()
+            if ($LASTEXITCODE -ne 0 -or $blob -cne $blobs[$relative]) { throw 'A staged file differs from its reviewed commit blob.' }
+          }
+          if (@(Get-ChildItem -LiteralPath $siteDirectory -Recurse -File).Count -ne $files.Count) { throw 'The staged public file set differs.' }
+          "site_path=$siteDirectory" | Add-Content -LiteralPath $env:GITHUB_OUTPUT
+          "source_sha=$sourceSha" | Add-Content -LiteralPath $env:GITHUB_OUTPUT
+          "Staged $($files.Count) public files from reviewed main commit $sourceSha." | Add-Content -LiteralPath $env:GITHUB_STEP_SUMMARY
+
+      - name: Upload the static Pages artifact
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: ${{ steps.site.outputs.site_path }}
+
+  deploy:
+    needs: artifact
+    if: >-
+      github.repository == 'nepalipay/policy' &&
+      github.ref == 'refs/heads/main' &&
+      github.actor == 'bidurkhatri' &&
+      github.triggering_actor == 'bidurkhatri'
+    runs-on: [self-hosted, Windows, X64, nepalipay-policy]
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Recheck main and the approved Pages route
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REVIEWED_MAIN_SHA: ${{ needs.artifact.outputs.source_sha }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $headers = @{ Authorization = "Bearer $env:GH_TOKEN"; Accept = 'application/vnd.github+json'; 'X-GitHub-Api-Version' = '2022-11-28' }
+          try {
+            $main = Invoke-RestMethod -Uri 'https://api.github.com/repos/nepalipay/policy/git/ref/heads/main' -Headers $headers
+            $pages = Invoke-RestMethod -Uri 'https://api.github.com/repos/nepalipay/policy/pages' -Headers $headers
+          } catch { throw 'Could not verify the main commit and Pages route.' }
+          if ($main.object.sha -cne $env:REVIEWED_MAIN_SHA) { throw 'Main changed after the reviewed dispatch.' }
+          if ($pages.build_type -cne 'workflow' -or $pages.cname -cne 'policy.nepalipay.com' -or $pages.https_enforced -ne $true) {
+            throw 'Pages must use GitHub Actions with the existing custom domain and HTTPS.'
+          }
+
+      - name: Deploy the reviewed artifact
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
